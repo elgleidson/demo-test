@@ -1,0 +1,29 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+    http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet id="0" author="elgleidson">
+        <tagDatabase tag="0.0"/>
+    </changeSet>
+
+    <changeSet id="1" author="elgleidson">
+        <createTable tableName="person">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+            	<constraints nullable="false"/>
+            </column>
+            <column name="name" type="varchar(100)"/>
+            <column name="birthday" type="date"/>
+            <column name="phone" type="varchar(10)"/>
+            <column name="nin" type="varchar(9)"/>
+        </createTable>
+        <addPrimaryKey tableName="person" columnNames="id" constraintName="pk_person"/>
+    </changeSet>
+    
+    <changeSet id="2" author="elgleidson">
+    	<createSequence sequenceName="sq_person"/>
+    </changeSet>
+
+</databaseChangeLog>
