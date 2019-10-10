@@ -119,7 +119,7 @@ public class PersonResourceTest {
 			    .andExpect(jsonPath("$[0].birthday", is(birthDayFormat(BIRTHDAY))))
 			    .andExpect(jsonPath("$[0].phone", is(phoneFormat(PHONE))))
 			    .andExpect(jsonPath("$[0].nin", is(ninFormat(NIN))))
-			    .andExpect(jsonPath("$[0].id", is(ID.intValue())))
+			    .andExpect(jsonPath("$[1].id", is(id.intValue())))
 			    .andExpect(jsonPath("$[1].name", is(name)))
 			    .andExpect(jsonPath("$[1].birthday", is(birthDayFormat(birthday))))
 			    .andExpect(jsonPath("$[1].phone", is(phoneFormat(phone))))
